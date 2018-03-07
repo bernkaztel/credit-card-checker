@@ -43,9 +43,9 @@ function validateCardDetails(element) {
 
 //Revisar fecha: string vacio, solo numeros, formato, formato mes, formato ano. 
 const checkDate = expiryDate => {
-    const onlyNumbers = /[^1-9| -]/g;
+    const onlyNumbers = /[^0-9| -]/g;
     const formatDate = /^\d{2}-\d{2}$/;
-    const formatMonth = new RegExp('0[^1-9]|1[^0-2]', 'g');
+    const formatMonth = new RegExp('0[^0-9]|1[^0-2]', 'g');
     const formatYear = new RegExp('0[^1-9]|1[^1-9]', 'g');
     const dateSplit = expiryDate.split("-");
     const dateMonth = dateSplit[0];
@@ -124,7 +124,7 @@ const checkName = cardName => {
 
 //Revisa numero de tarjeta con algoritmo de luhn
 const checkCardNumber = cardNumber => {
-    const onlyNumbers = /[^1-9]/g;
+    const onlyNumbers = /[^0-9]/g;
     if (cardNumber.toString().length === 0) {
         console.log('es un string vacio');
         return false;
