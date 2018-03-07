@@ -76,7 +76,7 @@ const checkDate = expiryDate => {
 
 //Revisa cvv: caracteres, string vacio, y formato
 const checkCVV = cardVerificationValue => {
-    const onlyNumbers = /[^1-9]/g;
+    const onlyNumbers = /[^0-9]/g;
     const formatCVV = /^\d{3}$/;
     if (cardVerificationValue.toString().length === 0) {
         console.log('es un string vacio');
